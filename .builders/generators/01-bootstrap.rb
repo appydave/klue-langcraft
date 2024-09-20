@@ -13,7 +13,7 @@ KManager.action :bootstrap do
         application:                application_name,
         application_description:    'Domain Specific Language Crafting',
         application_lib_path:       application_name.to_s, # need a specialized handlebars helper to turn this into a path, e.g ps-common => ps/common
-        application_lib_namespace:  'Klu::Langcraft',
+        application_lib_namespace:  'Klue::Langcraft',
         namespaces:                 ['Klue', 'Langcraft'],
         author:                     'David Cruwys',
         author_email:               'david@ideasmen.com.au',
@@ -34,7 +34,7 @@ KManager.action :bootstrap do
         # run_command('git init')
       end
       .blueprint(
-        active: false,
+        active: true,
         name: :bin_hook,
         description: 'initialize repository',
         on_exist: :write) do
@@ -71,7 +71,7 @@ KManager.action :bootstrap do
         run_command("git add .; git commit -m 'chore: #{self.options.description.downcase}'; git push")
       end
       .blueprint(
-        active: true,
+        active: false,
         name: :opinionated,
         description: 'opinionated GEM files',
         on_exist: :write) do
