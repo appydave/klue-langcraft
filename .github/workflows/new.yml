@@ -1,7 +1,5 @@
-# check https://www.githubstatus.com/ if any issues
 name: Build Application
 
-# echo ${{secrets.SOME_SECRET}} | sed 's/./& /g' && 
 on:
   push:
     branches: [ main ]
@@ -38,6 +36,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      packages: write  # For RubyGems
+      issues: write    # For creating issues
+      pull-requests: write  # For version bump commits
+
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -61,7 +63,6 @@ jobs:
       - name: Install semantic-release dependencies
         run: npm ci
 
-        # SEE MORE: https://github.com/semantic-release/semantic-release/issues/753
       - name: Run SemVer
         run: npm run release
         env:
