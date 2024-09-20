@@ -1,3 +1,10 @@
+## [0.0.5](https://github.com/appydave/klue-langcraft/compare/v0.0.4...v0.0.5) (2024-09-20)
+
+
+### Bug Fixes
+
+* add project plan ([46e2be2](https://github.com/appydave/klue-langcraft/commit/46e2be28cf36c98894ddc19342f14965b6fe580a))
+
 ## [0.0.4](https://github.com/appydave/klue-langcraft/compare/v0.0.3...v0.0.4) (2024-09-20)
 
 
