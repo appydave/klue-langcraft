@@ -6,7 +6,7 @@ GEM_NAME = 'klue_langcraft'
 
 require 'bundler/gem_tasks'
 require 'rspec/core/rake_task'
-require 'klue-langcraft/version'
+require 'klue/langcraft/version'
 
 RSpec::Core::RakeTask.new(:spec)
 
@@ -16,7 +16,7 @@ desc 'Compile all the extensions'
 task build: :compile
 
 Rake::ExtensionTask.new('klue-langcraft') do |ext|
-  ext.lib_dir = 'lib/klue-langcraft'
+  ext.lib_dir = 'lib/klue/langcraft'
 end
 
 desc 'Publish the gem to RubyGems.org'
