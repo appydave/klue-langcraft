@@ -4,7 +4,7 @@ require 'klue-langcraft/version'
 
 module Klue
   module Langcraft
-    # raise Klu::Langcraft::Error, 'Sample message'
+    # raise Klue::Langcraft::Error, 'Sample message'
     Error = Class.new(StandardError)
 
     # Your code goes here...

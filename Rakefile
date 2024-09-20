@@ -21,7 +21,7 @@ end
 
 desc 'Publish the gem to RubyGems.org'
 task :publish do
-  version = Klu::Langcraft::VERSION
+  version = Klue::Langcraft::VERSION
   system 'gem build'
   system "gem push #{GEM_NAME}-#{version}.gem"
 end
