@@ -30,9 +30,9 @@ As a DSL designer, I want to testing out Domain Specific Language designs for di
 
 See [project plan](./docs/project-plan/project-plan.md)
 
-## Requirements
+## Use Cases
 
-[Specification for the AppyDave - Agent Architecture Schema](./docs/requirements.md)
+[DSL Use Cases](./spec/usecases/readme.md)
 
 
 ## Development

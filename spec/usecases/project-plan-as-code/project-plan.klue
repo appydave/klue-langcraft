@@ -1,0 +1,60 @@
+dsl ProjectPlan do
+  node :project do
+    node :page, repeat: true do
+      attribute :name, type: :string
+      attribute :theme, type: :symbol
+      attribute :margin_left, type: :integer, default: 0
+      attribute :margin_top, type: :integer, default: 0
+
+      node :grid_layout do
+        attribute :y, type: :integer
+        attribute :direction, type: :symbol
+        attribute :grid_h, type: :integer
+        attribute :grid_w, type: :integer
+        attribute :wrap_at, type: :integer
+        attribute :grid, type: :integer
+      end
+
+      node :todo, repeat: true do
+        attribute :title, type: :string
+      end
+    end
+  end
+
+  node :export do
+    attribute :format, type: :symbol
+    attribute :filename, type: :string
+    attribute :page, type: :integer
+  end
+end
+
+ProjectPlan do
+  project do
+    page name: 'In progress', theme: :style_03 do
+      grid_layout y: 190, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0
+      todo title: 'DSLs as Code sample DSL'
+    end
+
+    page name: 'To Do', theme: :style_02 do
+      grid_layout y: 90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0
+      todo title: 'Add guideline documentation'
+      todo title: 'Docs as Code sample DSL'
+      todo title: 'Agent as Code sample DSL'
+      todo title: 'Poly as Code sample DSL'
+      todo title: 'Voice as Code sample DSL'
+      todo title: 'Data as Code sample DSL'
+      todo title: 'Chart Design as Code sample DSL'
+      todo title: 'Video as Code sample DSL'
+      todo title: 'Image as Code sample DSL'
+    end
+
+    page name: 'Done', theme: :style_06 do
+      grid_layout y: 90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0
+      todo title: 'Setup project with CI/CD, tests, linting, basic documentation, semantic versioning'
+    end
+  end
+
+  export format: :svg, filename: 'project_in_progress', page: 1
+  export format: :svg, filename: 'project_todo', page: 2
+  export format: :svg, filename: 'project_done', page: 3
+end

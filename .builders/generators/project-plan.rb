@@ -7,8 +7,8 @@ KManager.action :project_plan do
       .page('In progress', theme: :style_03, margin_left: 0, margin_top: 0) do
         grid_layout(y: 190, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
-        todo(title: 'Migrate from alpine to svelte, vue or react')
-        # todo(title: '')
+        todo(title: 'DSLs as Code sample DSL')
+
       end
       .page('To Do', theme: :style_02, margin_left: 0, margin_top: 0) do
         grid_layout(y:90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
@@ -17,7 +17,6 @@ KManager.action :project_plan do
         todo(title: 'Docs as Code sample DSL')
         todo(title: 'Agent as Code sample DSL')
         todo(title: 'Poly as Code sample DSL')
-        todo(title: 'DSLs as Code sample DSL')
         todo(title: 'Voice as Code sample DSL')
         todo(title: 'Data as Code sample DSL')
         todo(title: 'Chart Design as Code sample DSL')
