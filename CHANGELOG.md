@@ -1,3 +1,10 @@
+## [0.0.6](https://github.com/appydave/klue-langcraft/compare/v0.0.5...v0.0.6) (2024-09-20)
+
+
+### Bug Fixes
+
+* update documentation for usecases ([298f85a](https://github.com/appydave/klue-langcraft/commit/298f85aabf2a8acfad4926f2127017174df03ce4))
+
 ## [0.0.5](https://github.com/appydave/klue-langcraft/compare/v0.0.4...v0.0.5) (2024-09-20)
 
 
