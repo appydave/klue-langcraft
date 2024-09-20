@@ -28,13 +28,11 @@ gem install klue-langcraft
 
 As a DSL designer, I want to testing out Domain Specific Language designs for different usecases, so that I can develop DSLs quickly and effectively
 
-See all [stories](./STORIES.md)
+See [project plan](./docs/project-plan/project-plan.md)
 
+## Requirements
 
-## Usage
-
-See all [usage examples](./USAGE.md)
-
+[Specification for the AppyDave - Agent Architecture Schema](./docs/requirements.md)
 
 
 ## Development
