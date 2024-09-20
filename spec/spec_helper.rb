@@ -6,7 +6,7 @@ require 'simplecov'
 
 SimpleCov.start
 
-require 'klue-langcraft'
+require 'klue/langcraft'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

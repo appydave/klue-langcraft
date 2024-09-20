@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'klue-langcraft/version'
+require 'klue/langcraft/version'
 
 module Klue
   module Langcraft
