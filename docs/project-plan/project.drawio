@@ -1,56 +1,62 @@
-<mxfile host="NbD">
-  <diagram id="gj7" name="In progress">
+<mxfile host="DKN">
+  <diagram id="y30" name="In progress">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_gj7" parent="gj7"/>
-        <mxCell id="node_root_gj7" parent="page_root_gj7"/>
-        <mxCell id="gj7-2" value="DSLs as Code sample DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_gj7">
+        <mxCell id="page_root_y30" parent="y30"/>
+        <mxCell id="node_root_y30" parent="page_root_y30"/>
+        <mxCell id="y30-2" value="DSLs as Code sample DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_y30">
           <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="y30-3" value="Automate Base DSL setup" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_y30">
+          <mxGeometry x="330" y="10" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="y30-4" value="Automate DSL definion/designer for target DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_y30">
+          <mxGeometry x="650" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="QnN" name="To Do">
+  <diagram id="gaX" name="To Do">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_QnN" parent="QnN"/>
-        <mxCell id="node_root_QnN" parent="page_root_QnN"/>
-        <mxCell id="QnN-2" value="Add guideline documentation" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_QnN">
+        <mxCell id="page_root_gaX" parent="gaX"/>
+        <mxCell id="node_root_gaX" parent="page_root_gaX"/>
+        <mxCell id="gaX-2" value="Add guideline documentation" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_gaX">
           <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="QnN-3" value="Docs as Code sample DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_QnN">
+        <mxCell id="gaX-3" value="Docs as Code sample DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_gaX">
           <mxGeometry x="330" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="QnN-4" value="Agent as Code sample DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_QnN">
+        <mxCell id="gaX-4" value="Agent as Code sample DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_gaX">
           <mxGeometry x="650" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="QnN-5" value="Poly as Code sample DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_QnN">
+        <mxCell id="gaX-5" value="Poly as Code sample DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_gaX">
           <mxGeometry x="10" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="QnN-6" value="Voice as Code sample DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_QnN">
+        <mxCell id="gaX-6" value="Voice as Code sample DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_gaX">
           <mxGeometry x="330" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="QnN-7" value="Data as Code sample DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_QnN">
+        <mxCell id="gaX-7" value="Data as Code sample DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_gaX">
           <mxGeometry x="650" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="QnN-8" value="Chart Design as Code sample DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_QnN">
+        <mxCell id="gaX-8" value="Chart Design as Code sample DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_gaX">
           <mxGeometry x="10" y="170" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="QnN-9" value="Video as Code sample DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_QnN">
+        <mxCell id="gaX-9" value="Video as Code sample DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_gaX">
           <mxGeometry x="330" y="170" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="QnN-10" value="Image as Code sample DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_QnN">
+        <mxCell id="gaX-10" value="Image as Code sample DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_gaX">
           <mxGeometry x="650" y="170" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="ym1" name="Done">
+  <diagram id="Iaa" name="Done">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_ym1" parent="ym1"/>
-        <mxCell id="node_root_ym1" parent="page_root_ym1"/>
-        <mxCell id="ym1-2" value="Setup project with CI/CD, tests, linting, basic doumentation, semantic versioning" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_ym1">
+        <mxCell id="page_root_Iaa" parent="Iaa"/>
+        <mxCell id="node_root_Iaa" parent="page_root_Iaa"/>
+        <mxCell id="Iaa-2" value="Setup project with CI/CD, tests, linting, basic doumentation, semantic versioning" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Iaa">
           <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>

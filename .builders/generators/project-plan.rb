@@ -8,6 +8,11 @@ KManager.action :project_plan do
         grid_layout(y: 190, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
         todo(title: 'DSLs as Code sample DSL')
+        todo(title: 'Automate Base DSL setup')
+        todo(title: 'Automate DSL definion/designer for target DSL')
+        # todo(title: '')
+        # todo(title: '')
+        # todo(title: '')
 
       end
       .page('To Do', theme: :style_02, margin_left: 0, margin_top: 0) do

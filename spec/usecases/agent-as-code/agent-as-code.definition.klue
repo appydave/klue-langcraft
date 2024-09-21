@@ -1,0 +1,95 @@
+dsl AgentAsCode do
+  node :agent do
+    attribute :name, type: :symbol
+    attribute :description, type: :string
+
+    node :settings do
+      attribute :prompt_path, type: :string
+      attribute :default_llm, type: :symbol
+    end
+
+    node :prompts, container: true do
+      node :prompt, repeat: true do
+        attribute :name, type: :symbol
+        attribute :content, type: :string
+      end
+    end
+
+    node :section, repeat: true do
+      attribute :name, type: :string
+
+      node :step, repeat: true do
+        attribute :name, type: :string
+
+        node :input, repeat: true do
+          attribute :name, type: :symbol
+        end
+
+        node :prompt do
+          attribute :name, type: :symbol
+        end
+
+        node :output do
+          attribute :name, type: :symbol
+        end
+      end
+    end
+
+    node :actions do
+      node :action, repeat: true do
+        attribute :name, type: :symbol
+      end
+    end
+  end
+end
+
+AgentAsCode do
+  agent name: :youtube_launch_optimizer do
+    description 'This workflow optimizes video launch by analyzing, preparing, and generating content for various platforms.'
+
+    settings do
+      prompt_path 'prompts/youtube/launch_optimizer'
+      default_llm :gpt4o
+    end
+
+    prompts do
+      prompt name: :video_summary_prompt, content: 'load_file("1-1-summarize-video.txt")'
+      prompt name: :video_abridgement_prompt, content: 'load_file("1-2-1-abridge-video.txt")'
+      # ... (other prompts)
+    end
+
+    section 'Video Preparation' do
+      step 'Configure' do
+        input :brand_info
+        input :short_title
+        input :video_title
+        input :video_url
+        input :video_related_links
+        input :video_keywords
+        input :fold_cta
+        input :primary_cta
+        input :affiliate_cta
+        input :chapters
+        input :transcript
+        input :abridgement
+        input :summary
+      end
+
+      step 'Script Summary' do
+        input :transcript
+        prompt name: :video_summary_prompt
+        output :summary
+      end
+
+      # ... (other steps)
+    end
+
+    # ... (other sections)
+
+    actions do
+      action :save
+      action :save_json
+      action :save_crewai
+    end
+  end
+end

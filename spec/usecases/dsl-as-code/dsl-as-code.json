@@ -1,68 +1,49 @@
-# DSL as code is a DSL design tool, you can use it to create other DSL's
-#
-# This example is for creating an Agent as Code workflow DSL
-definition :workflow do
-  params do
-    param :name, type: :positional                        # Required positional parameter
-    param :version, type: :positional, default: 'v1.0'    # Optional positional parameter with default value
-    param :opts, type: :name_values                       # Double splat for additional named arguments
-  end
-
-  # Individual nodes with repeatable elements
-  node :settings do
-    params do
-      param :key, type: :positional, default: 'settings'
-      param :name, type: :positional, default: nil
-    end
-
-    # Repeatable setting node
-    node :setting, repeat: true do
-      param :key, type: :declarative
-      param :value, type: :positional
-      param :type, type: :positional, default: :string
-    end
-  end
-
-  # Plural node structure (prompts with prompt underneath)
-  node :prompts do
-    node :prompt, repeat: true do
-      param :key, type: :positional
-      param :content, type: :named, default: nil
-      param :file, type: :named, default: nil
-    end
-  end
-
-  # Section with repeatable steps
-  node :section, repeat: true, container: :sections do
-    params do
-      param :key, type: :positional
-      param :active, data_type: :boolean, default: true
-      param :opts, type: :double_splat
-    end
-
-    # Step inside section, also repeatable
-    node :step, repeat: true, container: :steps do
-      params do
-        param :key, type: :positional
-        param :active, data_type: :boolean, default: true
-        param :opts, type: :double_splat
-      end
-
-      # Step can have input nodes (repeatable)
-      node :input, repeat: true, container: :inputs do
-        params do
-          param :key, type: :positional
-          param :value, type: :positional
-        end
-      end
-
-      # Step can have prompts
-      node :prompt, repeat: true, container: :prompts do
-        params do
-          param :key, type: :positional
-          param :file, type: :named, default: nil
-        end
-      end
-    end
-  end
-end
+{
+  "name": "AI Agent Workflow",
+  "version": "v1.0",
+  "settings": {
+    "settings": [
+      {
+        "key": "setting1",
+        "value": "value1",
+        "type": "string"
+      },
+      {
+        "key": "setting2",
+        "value": "value2",
+        "type": "integer"
+      }
+    ]
+  },
+  "prompts": [
+    {
+      "key": "prompt1",
+      "content": null,
+      "file": "file1.txt"
+    }
+  ],
+  "sections": [
+    {
+      "key": "section1",
+      "active": true,
+      "steps": [
+        {
+          "key": "step1",
+          "active": true,
+          "inputs": [
+            {
+              "key": "input1",
+              "value": "value1"
+            }
+          ],
+          "prompts": [
+            {
+              "key": "prompt1",
+              "file": "file1.txt"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

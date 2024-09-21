@@ -1,7 +1,9 @@
 # DSL as code is a DSL design tool, you can use it to create other DSL's
 #
 # This example is for creating an Agent as Code workflow DSL
+# Note: definition is the same as node, only it is the root node
 definition :workflow do
+  # Do really need to use a params wrapper?
   params do
     param :name, type: :positional                        # Required positional parameter
     param :version, type: :positional, default: 'v1.0'    # Optional positional parameter with default value

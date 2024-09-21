@@ -1,0 +1,16 @@
+# DSL definitiona project planning
+definition :project_plan do
+  node :list, repeat: true, container: :lists do
+    node :item, repeat: true do
+      param :description, type: :positional
+    end
+  end
+
+  node :commands do
+    # Note that parent is really an alias to the :commands above, this way you don't need to name it as commands explictly
+    node :export, repeat: true, container: :parent do
+      param :format, type: :named, default: nil
+      param :format, type: :named, default: nil
+    end
+  end
+end

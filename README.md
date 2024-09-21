@@ -50,8 +50,6 @@ You can also run `bin/console` for an interactive prompt that will allow you to 
 ```bash
 bin/console
 
-Aaa::Bbb::Program.execute()
-# => ""
 ```
 
 `klue-langcraft` is setup with Guard, run `guard`, this will watch development file changes and run tests automatically, if successful, it will then run rubocop for style quality.

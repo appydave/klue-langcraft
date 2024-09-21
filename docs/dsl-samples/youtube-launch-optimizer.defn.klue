@@ -1,0 +1,58 @@
+definition :workflow do
+  param :name, type: :positional
+
+  node :description do
+    param :description, type: :positional
+  end
+
+  node :settings do
+    node :setting, repeat: true do
+      param :key, type: :declarative # Allows method name to be used as the key
+      param :value, type: :positional
+    end
+  end
+
+  node :prompts do
+    node :prompt, repeat: true do
+      param :key, type: :positional
+      param :content, type: :named, name: ''
+    end
+  end
+
+  # Section node with repeatable steps
+  node :section, repeat: true do
+    param :name, type: :positional
+
+    node :step, repeat: true do
+      param :key, type: :positional
+
+      node :input, repeat: true do
+        param :key, type: :positional
+      end
+
+      node :prompt do
+        param :key, type: :positional
+      end
+
+      node :output, repeat: true do
+        param :key, type: :positional
+      end
+    end
+  end
+
+  node :actions do
+    node :save do
+    end
+
+    node :save_json do
+      param :path, type: :positional
+    end
+
+    node :action, repeat: true do
+      param :name, type: :positional # Action name (e.g., save, save_json)
+
+      # Named parameters for actions
+      param :args, type: :named, name: 'args', repeat: true, optional: true # Optional args like file path for save_json
+    end
+  end
+end
