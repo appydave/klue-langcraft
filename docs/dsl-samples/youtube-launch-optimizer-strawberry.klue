@@ -1,0 +1,47 @@
+workflow :youtube_launch_optimizer do
+  description 'Optimize video publishing for YouTube titles, descriptions, thumbnails, and social content'
+
+  settings do
+    prompt_path 'prompts/youtube/launch_optimizer'
+    default_llm :gpt4o
+  end
+
+  prompts do
+    prompt :title_generator, content: 'Generate an engaging YouTube video title based on the following description.'
+    prompt :description_generator, content: 'Create a detailed YouTube video description.'
+    prompt :thumbnail_idea, content: 'Suggest creative thumbnail ideas for the video.'
+  end
+
+  section :title_optimization do
+    step :generate_title do
+      input :video_description
+
+      prompt :title_generator
+
+      output :video_title
+    end
+    step :generate_description do
+      input :video_title
+      input :video_keywords
+
+      prompt :description_generator
+
+      output :video_description
+    end
+  end
+
+  section :thumbnail_optimization do
+    step :generate_thumbnail_ideas do
+      input :video_description
+
+      prompt :thumbnail_idea
+
+      output :thumbnail_suggestions
+    end
+  end
+
+  actions do
+    save
+    save_json 'outputs/youtube_launch_optimizer.json'
+  end
+end

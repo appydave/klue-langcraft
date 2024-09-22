@@ -1,0 +1,337 @@
+{
+  "definition": {
+    "name": "workflow",
+    "type": "root",
+    "parameters": [
+      {
+        "name": "name",
+        "type": "positional",
+        "value": "youtube_launch_optimizer"
+      }
+    ],
+    "nodes": [
+      {
+        "name": "description",
+        "type": "node",
+        "parameters": [
+          {
+            "name": "description",
+            "type": "positional",
+            "value": "This workflow optimizes video launch by analyzing, preparing, and generating content for various platforms."
+          }
+        ]
+      },
+      {
+        "name": "settings",
+        "type": "node",
+        "repeat": true,
+        "nodes": [
+          {
+            "name": "setting",
+            "parameters": [
+              {
+                "name": "key",
+                "type": "declarative",
+                "value": "prompt_path"
+              },
+              {
+                "name": "value",
+                "type": "positional",
+                "value": "prompts/youtube/launch_optimizer"
+              }
+            ]
+          },
+          {
+            "name": "setting",
+            "parameters": [
+              {
+                "name": "key",
+                "type": "declarative",
+                "value": "default_llm"
+              },
+              {
+                "name": "value",
+                "type": "positional",
+                "value": "gpt4o"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "prompts",
+        "type": "node",
+        "repeat": true,
+        "nodes": [
+          {
+            "name": "prompt",
+            "parameters": [
+              {
+                "name": "key",
+                "type": "positional",
+                "value": "some_prompt"
+              },
+              {
+                "name": "content",
+                "type": "named",
+                "default": "",
+                "value": "1-1-some.txt"
+              }
+            ]
+          },
+          {
+            "name": "prompt",
+            "parameters": [
+              {
+                "name": "key",
+                "type": "positional",
+                "value": "another_prompt"
+              },
+              {
+                "name": "content",
+                "type": "named",
+                "default": "",
+                "value": "1-2-another.txt"
+              }
+            ]
+          },
+          {
+            "name": "prompt",
+            "parameters": [
+              {
+                "name": "key",
+                "type": "positional",
+                "value": "yet_another_prompt"
+              },
+              {
+                "name": "content",
+                "type": "named",
+                "default": "",
+                "value": "1-3-yet-another.txt"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "sections",
+        "type": "node",
+        "repeat": true,
+        "nodes": [
+          {
+            "name": "section",
+            "parameters": [
+              {
+                "name": "name",
+                "type": "positional",
+                "value": "Section 1"
+              }
+            ],
+            "nodes": [
+              {
+                "name": "step",
+                "parameters": [
+                  {
+                    "name": "key",
+                    "type": "positional",
+                    "value": "Step 1"
+                  }
+                ],
+                "nodes": [
+                  {
+                    "name": "input",
+                    "parameters": [
+                      {
+                        "name": "key",
+                        "type": "positional",
+                        "value": "attribute1"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "input",
+                    "parameters": [
+                      {
+                        "name": "key",
+                        "type": "positional",
+                        "value": "attribute2"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "step",
+                "parameters": [
+                  {
+                    "name": "key",
+                    "type": "positional",
+                    "value": "Step 2"
+                  }
+                ],
+                "nodes": [
+                  {
+                    "name": "input",
+                    "parameters": [
+                      {
+                        "name": "key",
+                        "type": "positional",
+                        "value": "attribute1"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "prompt",
+                    "parameters": [
+                      {
+                        "name": "key",
+                        "type": "positional",
+                        "value": "some_prompt"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "output",
+                    "parameters": [
+                      {
+                        "name": "key",
+                        "type": "positional",
+                        "value": "attribute3"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "step",
+                "parameters": [
+                  {
+                    "name": "key",
+                    "type": "positional",
+                    "value": "Step 3"
+                  }
+                ],
+                "nodes": [
+                  {
+                    "name": "input",
+                    "parameters": [
+                      {
+                        "name": "key",
+                        "type": "positional",
+                        "value": "attribute2"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "input",
+                    "parameters": [
+                      {
+                        "name": "key",
+                        "type": "positional",
+                        "value": "attribute3"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "prompt",
+                    "parameters": [
+                      {
+                        "name": "key",
+                        "type": "positional",
+                        "value": "another_prompt"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "output",
+                    "parameters": [
+                      {
+                        "name": "key",
+                        "type": "positional",
+                        "value": "attribute4"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "section",
+            "parameters": [
+              {
+                "name": "name",
+                "type": "positional",
+                "value": "Section 2"
+              }
+            ],
+            "nodes": [
+              {
+                "name": "step",
+                "parameters": [
+                  {
+                    "name": "key",
+                    "type": "positional",
+                    "value": "Other Step 1"
+                  }
+                ],
+                "nodes": [
+                  {
+                    "name": "input",
+                    "parameters": [
+                      {
+                        "name": "key",
+                        "type": "positional",
+                        "value": "attribute1"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "prompt",
+                    "parameters": [
+                      {
+                        "name": "key",
+                        "type": "positional",
+                        "value": "yet_another_prompt"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "output",
+                    "parameters": [
+                      {
+                        "name": "key",
+                        "type": "positional",
+                        "value": "attribute5"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "actions",
+        "type": "node",
+        "nodes": [
+          {
+            "name": "save",
+            "type": "node"
+          },
+          {
+            "name": "save_json",
+            "parameters": [
+              {
+                "name": "path",
+                "type": "positional",
+                "value": "~/gpt-workflows/youtube-launch-optimizer.json"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "definition": {
+    "name": "workflow",
+    "params": [
+      {
+        "name": "name",
+        "type": "positional"
+      }
+    ],
+    "nodes": [
+      {
+        "name": "description",
+        "params": [
+          {
+            "name": "description",
+            "type": "positional"
+          }
+        ]
+      },
+      {
+        "name": "settings",
+        "nodes": [
+          {
+            "name": "setting",
+            "repeat": true,
+            "params": [
+              {
+                "name": "key",
+                "type": "declarative"
+              },
+              {
+                "name": "value",
+                "type": "positional"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "prompts",
+        "nodes": [
+          {
+            "name": "prompt",
+            "repeat": true,
+            "params": [
+              {
+                "name": "key",
+                "type": "positional"
+              },
+              {
+                "name": "content",
+                "type": "named",
+                "default": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "section",
+        "repeat": true,
+        "params": [
+          {
+            "name": "name",
+            "type": "positional"
+          }
+        ],
+        "nodes": [
+          {
+            "name": "step",
+            "repeat": true,
+            "params": [
+              {
+                "name": "key",
+                "type": "positional"
+              }
+            ],
+            "nodes": [
+              {
+                "name": "input",
+                "repeat": true,
+                "params": [
+                  {
+                    "name": "key",
+                    "type": "positional"
+                  }
+                ]
+              },
+              {
+                "name": "prompt",
+                "params": [
+                  {
+                    "name": "key",
+                    "type": "positional"
+                  }
+                ]
+              },
+              {
+                "name": "output",
+                "repeat": true,
+                "params": [
+                  {
+                    "name": "key",
+                    "type": "positional"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "actions",
+        "nodes": [
+          {
+            "name": "save",
+            "params": []
+          },
+          {
+            "name": "save_json",
+            "params": [
+              {
+                "name": "path",
+                "type": "positional"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

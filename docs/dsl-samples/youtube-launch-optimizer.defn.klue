@@ -15,7 +15,7 @@ definition :workflow do
   node :prompts do
     node :prompt, repeat: true do
       param :key, type: :positional
-      param :content, type: :named, name: ''
+      param :content, type: :named, default: ''
     end
   end
 
@@ -46,13 +46,6 @@ definition :workflow do
 
     node :save_json do
       param :path, type: :positional
-    end
-
-    node :action, repeat: true do
-      param :name, type: :positional # Action name (e.g., save, save_json)
-
-      # Named parameters for actions
-      param :args, type: :named, name: 'args', repeat: true, optional: true # Optional args like file path for save_json
     end
   end
 end
