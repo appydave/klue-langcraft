@@ -1,3 +1,10 @@
+## [0.1.1](https://github.com/appydave/klue-langcraft/compare/v0.1.0...v0.1.1) (2024-09-22)
+
+
+### Bug Fixes
+
+* add chatgpt conversation link ([ae5448d](https://github.com/appydave/klue-langcraft/commit/ae5448d4e23ab1fd673c788e6f30e736d82afb44))
+
 # [0.1.0](https://github.com/appydave/klue-langcraft/compare/v0.0.7...v0.1.0) (2024-09-22)
 
 
