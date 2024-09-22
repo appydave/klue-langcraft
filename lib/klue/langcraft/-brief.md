@@ -1,5 +1,7 @@
 # Brief for creating the Parser, Tokenizer and Parsing our first DSL
 
+[ChatGPT Conversation](https://chatgpt.com/share/66efd141-6644-8002-970d-4ad641c54d00)
+
 # 1. Parsing Libraries in Ruby
 
 Here are three Ruby parsing libraries with their pros and cons:

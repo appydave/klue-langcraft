@@ -12,7 +12,7 @@ workflow :youtube_launch_optimizer do
     prompt :thumbnail_idea, content: 'Suggest creative thumbnail ideas for the video.'
   end
 
-  section :title_optimization do
+  section :title_optimization, count: 3, active: true do
     step :generate_title do
       input :video_description
 
