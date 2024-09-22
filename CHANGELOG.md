@@ -1,3 +1,10 @@
+# [0.1.0](https://github.com/appydave/klue-langcraft/compare/v0.0.7...v0.1.0) (2024-09-22)
+
+
+### Features
+
+* add requirements documentation for sample parser ([c0dbe76](https://github.com/appydave/klue-langcraft/commit/c0dbe76f74d6f3d185a7eb37f507bd1e34578773))
+
 ## [0.0.7](https://github.com/appydave/klue-langcraft/compare/v0.0.6...v0.0.7) (2024-09-21)
 
 
