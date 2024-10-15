@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'json'
 require 'net/http'
 require 'uri'
@@ -39,7 +41,7 @@ class DSLInterpreter
 
     # Assign positional parameters generically
     positional_args.each_with_index do |arg, index|
-      data["param#{index + 1}".to_sym] = arg
+      data[:"param#{index + 1}"] = arg
     end
 
     # Merge named parameters directly

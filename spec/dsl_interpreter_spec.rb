@@ -1,14 +1,6 @@
+# frozen_string_literal: true
+
 BASE_PATH = '/Users/davidcruwys/dev/appydave/klueless'
-
-file_list = [
-  'docs/dsls/tools-as-code/context-gather',
-  'docs/dsls/tools-as-code/build-prompt',
-  'docs/dsls/media-as-code/storyboard-graphics',
-  'docs/dsls/agent-as-code/youtube-launch-optimizer'
-]
-
-file = 'docs/dsls/marketing-as-code/lars/keyword-research-and-clustering'
-file = 'docs/dsls/thai-business-costing/coffee-shop'
 file = 'docs/dsls/tools-as-code/code-explorer'
 
 file_list = [file]
@@ -24,4 +16,3 @@ file_list.each do |file|
 
   interpreter.send_to_endpoint
 end
-
