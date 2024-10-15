@@ -103,3 +103,12 @@ definition :workflow do
   end
 end
 ```
+
+
+You're going to help me process a Ruby inspired DSL into JSON.
+
+There will be two parts of this conversation, part one will be about exploring the concept with a simple reflection based system that will work with any Ruby compatible structure.
+
+Part two, which I kick off after I finish part one will be to use an AST style of approach so that I can process the same concept, JavaScript or RUST.
+
+To get started, I'm going to give you some sample Ruby DSL and you're going to convert them to an equivalent ruby hash

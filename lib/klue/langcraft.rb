@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'klue/langcraft/version'
+require 'dsl_interpreter'
 
 module Klue
   module Langcraft
