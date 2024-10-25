@@ -1,0 +1,12 @@
++----------------+       +-----------------------+       +----------------------------+       +--------------------+
+|     Users      |       |     DSL Requests      |       |   DSL Processing            |       |   DSL Audit Log     |
++----------------+       +-----------------------+       +----------------------------+       +--------------------+
+| id (PK)        |<----->| id (PK)               |<----->| id (PK)                     |       | id (PK)             |
+| user_info      |       | user_id (FK)          |       | dsl_id (FK)                 |<----->| dsl_id (FK)         |
++----------------+       | source_id (nullable)  |       | process_type                |       | name                |
+                         | name (non-unique)     |       | process_status              |       | dsl_payload         |
+                         | dsl_type              |       | process_timestamp           |       | changed_timestamp   |
+                         | dsl_payload           |       +----------------------------+       +--------------------+
+                         | created_timestamp     |
+                         | updated_timestamp     |
+                         +-----------------------+

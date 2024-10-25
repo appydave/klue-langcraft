@@ -1,0 +1,12 @@
+# Multi-Element Example Fails does not work with sibilings
+many_elements do
+  a name: 1 do
+    go_deep do
+      a name: 2 do
+      end
+    end
+  end
+
+  a name: 3 do
+  end
+end

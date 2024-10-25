@@ -14,6 +14,7 @@ AllCops:
   Exclude:
     - ".builders/**/*"
     - "spec/samples/**/*"
+    - "lib/*" # OLD DSL INTERPRETER
 
 Metrics/BlockLength:
   Exclude:
@@ -104,3 +105,14 @@ RSpec/SpecFilePathSuffix:
 RSpec/NamedSubject:
   Exclude:
     - "**/spec/**/*"
+
+RSpec/MultipleExpectations:
+  Exclude:
+    - "**/spec/**/*"
+
+RSpec/MultipleMemoizedHelpers:
+  Exclude:
+    - "**/spec/**/*"
+
+RSpec/ExampleLength:
+  Max: 20

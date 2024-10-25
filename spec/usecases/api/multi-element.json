@@ -1,0 +1,17 @@
+{
+  "many_elements": {
+    "a": [
+      {
+        "name": 1,
+        "go_deep": {
+          "a": {
+            "name": 2
+          }
+        }
+      },
+      {
+        "name": 3
+      }
+    ]
+  }
+}

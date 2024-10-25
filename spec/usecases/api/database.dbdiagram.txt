@@ -1,0 +1,31 @@
+Table users {
+  id int [pk, increment]          // Primary key, user ID
+  user_info varchar
+}
+
+Table dsl_requests {
+  id int [pk, increment]          // Primary key, DSL request ID
+  user_id int [ref: > users.id]   // Foreign key to users table
+  source_id varchar [null]        // Unique ID based on file or other sources (nullable)
+  name varchar                    // Human-readable name (non-unique label)
+  dsl_type varchar                // Type of DSL request (e.g., "dynamic-prompt")
+  dsl_payload text                // Raw DSL data in JSON format
+  created_timestamp datetime      // Time when the DSL request was first created
+  updated_timestamp datetime      // Time when the DSL request was last updated
+}
+
+Table dsl_processing {
+  id int [pk, increment]          // Primary key, process ID
+  dsl_id int [ref: > dsl_requests.id]  // Foreign key to DSL requests table
+  process_type varchar            // Type of processing (validation, generation, etc.)
+  process_status varchar          // Status of processing (success, failure, etc.)
+  process_timestamp datetime      // Time when the processing occurred
+}
+
+Table dsl_audit_log {
+  id int [pk, increment]          // Primary key, audit log ID
+  dsl_id int [ref: > dsl_requests.id]  // Foreign key to DSL requests table
+  name varchar                    // The name or label associated with the request
+  dsl_payload text                // The full DSL payload
+  changed_timestamp datetime      // The time when the change occurred
+}

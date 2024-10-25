@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
-require 'json'
-require 'net/http'
-require 'uri'
-
+# ChatReferences:
+# - https://chatgpt.com/c/67064770-d524-8002-8344-3091e895d150
+# - https://chatgpt.com/c/6706289c-9b9c-8002-86e3-f9198c1c608a
+# - https://chatgpt.com/c/670dcd34-5dbc-8002-ad7a-d4df54a6a2e0
+#
 class DSLInterpreter
   def initialize
     @data = {}
@@ -61,10 +62,27 @@ class DSLInterpreter
   attr_reader :data
 
   # Reading file and evaluating as Ruby
-  def evaluate_file(base_path, input_file, output_file)
-    content = File.read(File.join(base_path, input_file))
+  def process(base_path, input_file, output_file)
+    file_path = File.join(base_path, input_file)
+    content = File.read(file_path)
+
+    # begin
     instance_eval(content)
-    File.write(File.join(base_path, output_file), JSON.pretty_generate(@data))
+    # rescue SyntaxError => e
+    #   puts "Syntax error in DSL file: #{input_file}"
+    #   puts "Error message: #{e.message}"
+    #   puts "Error occurred at line: #{e.backtrace.first}"
+    #   return false  # Indicate that processing failed
+    # rescue StandardError => e
+    #   puts "Error processing DSL file: #{input_file}"
+    #   puts "Error message: #{e.message}"
+    #   puts "Error occurred at: #{e.backtrace.first}"
+    #   return false  # Indicate that processing failed
+    # end
+
+    output_path = File.join(base_path, output_file)
+    File.write(output_path, JSON.pretty_generate(to_hash))
+    true # Indicate that processing succeeded
   end
 
   # Convert to hash or JSON as required

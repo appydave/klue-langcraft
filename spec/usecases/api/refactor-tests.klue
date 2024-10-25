@@ -1,0 +1,36 @@
+# Select a random list of files form a Search through a list of matching files and discover useful knowledge.
+dynamic_prompt do
+  file_collector(
+    root: '~/dev/ad/appydave/appydave-app', as: :file_list
+    ) do
+    files do
+      include 'spec/requests/api/v1/authentication_spec.rb'
+    end
+  end
+
+  context_content do
+    files do
+      include 'app/controllers/api/v1/*_controller.rb'
+      include '**/models/**/*'
+    end
+  end
+
+  prompt :create_spec do
+    instruction <<~TEXT
+      The tests don't take into account that this service is locked down using JWT.
+
+      And so there are some auth errors going on, can you refactor the test to work with the security.
+
+      [file_list]
+
+    TEXT
+  end
+
+
+  actions do
+    random_set :file_list, count: 5, as: :random_files
+
+    # create_prompts data: :file_list, template: :find_anti_patterns, clipboard: true
+    create_prompts data: :random_files, template: :find_anti_patterns, clipboard: true
+  end
+end

@@ -1,0 +1,19 @@
+# Select a random list of files form a Search through a list of matching files and discover useful knowledge.
+code_explorer do
+  file_collector(
+    root: '~/dev/ad/appydave/appydave-app', as: :file_list1
+    ) do
+    files do
+      include 'spec/requests/api/v1/authentication_spec.rb'
+    end
+  end
+
+  file_collector(
+    root: '~/dev/ad/appydave/appydave-app', as: :file_list2
+    ) do
+    files do
+      include 'app/controllers/api/v1/*_controller.rb'
+      exclude '**/authentication_controller*'
+    end
+  end
+end

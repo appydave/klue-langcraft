@@ -1,0 +1,27 @@
+{
+  "code_explorer": {
+    "file_collector": [
+      {
+        "root": "~/dev/ad/appydave/appydave-app",
+        "as": "file_list1",
+        "files": {
+          "include": {
+            "param1": "spec/requests/api/v1/authentication_spec.rb"
+          }
+        }
+      },
+      {
+        "root": "~/dev/ad/appydave/appydave-app",
+        "as": "file_list2",
+        "files": {
+          "include": {
+            "param1": "app/controllers/api/v1/*_controller.rb"
+          },
+          "exclude": {
+            "param1": "**/authentication_controller*"
+          }
+        }
+      }
+    ]
+  }
+}

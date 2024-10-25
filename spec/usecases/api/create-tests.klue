@@ -1,0 +1,55 @@
+#
+dynamic_prompt do
+  chatgpt 'https://chatgpt.com/c/67185782-bed8-8002-bfcb-d62e8d97e4d7'
+
+  file_collector(
+    root: '~/dev/ad/appydave/appydave-app', as: :file_list
+    ) do
+    files do
+      include 'app/controllers/api/v1/*_controller.rb'
+      exclude '**/authentication_controller*'
+    end
+  end
+
+  rag :examples do
+    example :controller_spec, "~/.klueless/spec/api/controller_spec.rb"
+  end
+
+  prompt :create_spec do
+    header <<~TEXT
+      Your task is to create unit tests in a Rails 8 application.
+
+      Create a unit spec for the following file.
+
+      Make sure you understand the type of file/unit test you are creating and let me know.
+
+      Here is the list of files to create tests for:
+    TEXT
+
+    item "[file_name]"
+
+    footer <<~TEXT
+      Once you've identified the type of tests, generatore infromation in the following format.
+
+      <tests>
+        <info>
+          <type>[type of test goes here]</type>
+          <considerations>[considerations and your thought process goes here]</considerations>
+          <code_file>[code_file goes here]</code_file>
+          <test_file>[test_file goes here]</test_file>
+        </info>
+        <test>
+          [test code goes here]
+        </test>
+      </tests>
+    TEXT
+  end
+
+
+  actions do
+    random_set :file_list, count: 5, as: :random_files
+
+    # create_prompts data: :file_list, template: :find_anti_patterns, clipboard: true
+    create_prompts data: :random_files, template: :find_anti_patterns, clipboard: true
+  end
+end
