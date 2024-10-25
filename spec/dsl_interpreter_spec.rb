@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 # DEPRECATE WHEN REFACTOR IS COMPLETE
 # BASE_PATH = '/Users/davidcruwys/dev/ad/klueless' # /klue-langcraft'
 # initial_file = 'docs/dsls/tools-as-code/code-explorer'
