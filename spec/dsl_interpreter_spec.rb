@@ -1,23 +1,25 @@
 # frozen_string_literal: true
 
-BASE_PATH = '/Users/davidcruwys/dev/ad/klueless' # /klue-langcraft'
-initial_file = 'docs/dsls/tools-as-code/code-explorer'
 
-file_list = [initial_file]
+# DEPRECATE WHEN REFACTOR IS COMPLETE
+# BASE_PATH = '/Users/davidcruwys/dev/ad/klueless' # /klue-langcraft'
+# initial_file = 'docs/dsls/tools-as-code/code-explorer'
 
-file_list.each do |current_file|
-  current_file = current_file.gsub(/\.klue$/, '')
+# file_list = [initial_file]
 
-  input_file = "#{current_file}.klue"
-  output_file = "#{current_file}.json"
-  extended_output_file = "#{current_file}-extended.json"
+# file_list.each do |current_file|
+#   current_file = current_file.gsub(/\.klue$/, '')
 
-  interpreter = DSLInterpreter.new
-  dsl_processor = DSLProcessData.new
+#   input_file = "#{current_file}.klue"
+#   output_file = "#{current_file}.json"
+#   extended_output_file = "#{current_file}-extended.json"
 
-  interpreter.process(BASE_PATH, input_file, output_file)
-  # puts JSON.pretty_generate(interpreter.to_hash)
-  dsl_processor.process(BASE_PATH, output_file, extended_output_file)
+#   interpreter = DSLInterpreter.new
+#   dsl_processor = DSLProcessData.new
 
-  # interpreter.send_to_endpoint
-end
+#   interpreter.process(BASE_PATH, input_file, output_file)
+#   # puts JSON.pretty_generate(interpreter.to_hash)
+#   dsl_processor.process(BASE_PATH, output_file, extended_output_file)
+
+#   # interpreter.send_to_endpoint
+# end
