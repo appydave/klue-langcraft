@@ -1,3 +1,17 @@
+# [0.2.0](https://github.com/appydave/klue-langcraft/compare/v0.1.1...v0.2.0) (2024-10-25)
+
+
+### Bug Fixes
+
+* fix ci issue ([a3bfd35](https://github.com/appydave/klue-langcraft/commit/a3bfd35371b7c0ca70b0b57d70d4541c7a4ec54b))
+* fix cop ([123070b](https://github.com/appydave/klue-langcraft/commit/123070bd1f636a81d01da469c2e5072c57384bae))
+* update dsl_interpreter ([2507045](https://github.com/appydave/klue-langcraft/commit/2507045c3f7f205603a3f899785e9c5445c4c0bb))
+
+
+### Features
+
+* refactor dsl processor ([5875dc9](https://github.com/appydave/klue-langcraft/commit/5875dc957789f113da762a6dcb55cda66bfb8a3d))
+
 ## [0.1.1](https://github.com/appydave/klue-langcraft/compare/v0.1.0...v0.1.1) (2024-09-22)
 
 
