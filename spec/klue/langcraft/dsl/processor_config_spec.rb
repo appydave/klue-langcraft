@@ -59,7 +59,6 @@ RSpec.describe Klue::Langcraft::DSL::ProcessorConfig do
       }
 
       expect(processor_config.all_processors).to eq(expected_processors)
-      puts processor_config.all_processors
     end
   end
 

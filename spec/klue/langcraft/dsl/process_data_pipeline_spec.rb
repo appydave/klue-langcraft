@@ -69,43 +69,6 @@ RSpec.describe Klue::Langcraft::DSL::ProcessDataPipeline do
       end
     end
 
-    # NOT YET SUPPORTED
-    # [{:first_name=>"John", :last_name=>"Doe"}, {:first_name=>"John", :last_name=>"Doe"}, {:first_name=>"John", :last_name=>"Doe"}]
-    # context 'when fullname process matches three times and the as: property is provided once' do
-    #   let(:data) do
-    #     {
-    #       'some_root' => {
-    #         'full_name' => [
-    #           {first_name: "John", last_name: "Doe"},
-    #           {first_name: "John", last_name: "Doe"},
-    #           {first_name: "John", last_name: "Doe"}
-    #         ]
-    #       }
-    #     }
-    #   end
-
-    #   fit do
-    #     is_expected.to include(
-    #     {
-    #       'full_name-1' => { name: 'full_name-1', type: 'full_name', data: { full_name: 'John 1 Doe 1' } },
-    #       'full_name-2' => { name: 'full_name-2', type: 'full_name', data: { full_name: 'John 2 Doe 2' } },
-    #       'full_name-3' => { name: 'full_name-3', type: 'full_name', data: { full_name: 'John 3 Doe 3' } },
-    #     })
-    #   end
-    # end
-
-    # fit 'processes the data with the matched processors and adds the result to process-data' do
-    #   result = pipeline.execute(data)
-
-    #   expect(result['process-data']).to include(
-    #     'full_name-1' => {
-    #       name: 'full_name-1',
-    #       type: 'full_name',
-    #       data: { full_name: 'John Doe' }
-    #     }
-    #   )
-    # end
-
     it 'processes the data with the matched processors and adds the result to process-data' do
       skip 'This test needs to be implemented once the ProcessDataPipeline functionality is complete'
 

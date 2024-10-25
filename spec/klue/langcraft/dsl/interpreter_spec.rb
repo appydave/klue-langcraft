@@ -380,11 +380,12 @@ RSpec.describe Klue::Langcraft::DSL::Interpreter do
 
   describe 'Processes a real .klue file and writes a .json output' do
     # let(:klue_file) { '/Users/davidcruwys/dev/ad/klueless/docs/dsls/docs-as-code/doc-as-code-sample.klue' }
-    let(:klue_file) { '/Users/davidcruwys/dev/ad/klueless/klue-langcraft/spec/klue/langcraft/dsl/test1.klue' }
+    let(:klue_file) { '/Users/davidcruwys/dev/ad/klueless/klue-langcraft/spec/klue/langcraft/dsl/interpreter_spec.klue' }
     let(:json_output_file) { File.join(File.dirname(__FILE__), 'interpreter_spec.json') }
     let(:json_output_enhanced_file) { File.join(File.dirname(__FILE__), 'interpreter_spec.enhanced.json') }
 
     it 'processes the .klue file and writes the result to a JSON file' do
+      skip 'INTERGRATION TEST ONLY'
       # Ensure the .klue file exists
       expect(File.exist?(klue_file)).to be true
 
