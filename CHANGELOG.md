@@ -1,3 +1,15 @@
+# [0.3.0](https://github.com/appydave/klue-langcraft/compare/v0.2.0...v0.3.0) (2024-10-26)
+
+
+### Bug Fixes
+
+* fix cop ([d77187a](https://github.com/appydave/klue-langcraft/commit/d77187ac59088b7ce6ca23630a06fbb007f05fb4))
+
+
+### Features
+
+* update cli for watch and process ([9f0eeb1](https://github.com/appydave/klue-langcraft/commit/9f0eeb1a9409f6734d4ab930ca5c3164b71446eb))
+
 # [0.2.0](https://github.com/appydave/klue-langcraft/compare/v0.1.1...v0.2.0) (2024-10-25)
 
 
