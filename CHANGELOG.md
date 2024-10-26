@@ -1,3 +1,15 @@
+# [0.4.0](https://github.com/appydave/klue-langcraft/compare/v0.3.0...v0.4.0) (2024-10-26)
+
+
+### Bug Fixes
+
+* remove old code ([c5bd7da](https://github.com/appydave/klue-langcraft/commit/c5bd7da6cb162f6de850bb12083c9af28a7e1de8))
+
+
+### Features
+
+* remove all code ([0e35c53](https://github.com/appydave/klue-langcraft/commit/0e35c532f022396b84f248a9f5db975155ad0e94))
+
 # [0.3.0](https://github.com/appydave/klue-langcraft/compare/v0.2.0...v0.3.0) (2024-10-26)
 
 
