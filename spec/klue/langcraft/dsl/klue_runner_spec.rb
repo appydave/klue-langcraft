@@ -19,7 +19,7 @@ RSpec.describe Klue::Langcraft::DSL::KlueRunner do
     let(:input_file) { klue_file }
 
     it 'processes the .klue file and writes the result to JSON files' do
-      # skip 'INTEGRATION TEST ONLY - Run manually when needed'
+      skip 'INTEGRATION TEST ONLY - Run manually when needed'
 
       runner.run(
         input_file: input_file,

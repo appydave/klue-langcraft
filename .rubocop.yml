@@ -40,12 +40,23 @@ Metrics/BlockLength:
     - shared_examples_for
     - transaction
 
-# Metrics/AbcSize:
-#   Exclude:
-#     - bin/*
+Metrics/AbcSize:
+  Exclude:
+    - bin/*
+
 
 Metrics/MethodLength:
   Max: 25
+  Exclude:
+    - bin/*
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - bin/*
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - bin/*
 
 Layout/LineLength:
   Max: 200
@@ -79,8 +90,8 @@ Style/EmptyMethod:
   Exclude:
     - "**/spec/**/*"
 Metrics/ParameterLists:
-  Exclude:
-    - "**/spec/**/*"
+  Enabled: false
+
 Layout/EmptyLineBetweenDefs:
   Exclude:
     - "**/spec/**/*"

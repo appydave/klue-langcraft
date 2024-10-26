@@ -6,6 +6,10 @@ $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 require 'klue/langcraft'
 require 'optparse'
 
+# CLI class for the Klue Langcraft application.
+# This class handles command-line interactions, parsing options,
+# and executing the appropriate commands for processing files
+# or watching directories.
 class CLI
   def initialize
     @commands = {
@@ -114,7 +118,7 @@ class CLI
       opts.banner = 'Usage: server watch [options]'
 
       opts.on('-w', '--watch-directory DIRECTORY', 'Directory to watch (can be specified multiple times)') do |dir|
-        options[:directories] << dir
+        options[:directories] << File.expand_path(dir) # Expand the path here
       end
 
       opts.on('-f', '--flags TYPE', 'Set processing flags (none, basic, enhanced, all)') do |type|
@@ -143,6 +147,9 @@ class CLI
 
     # If no directories were specified, use the current directory
     options[:directories] = [Dir.pwd] if options[:directories].empty?
+
+    # Ensure all directories are expanded
+    options[:directories].map! { |dir| File.expand_path(dir) }
 
     Klue::Langcraft::DSL::Watcher.new(
       options[:directories],
