@@ -1,0 +1,24 @@
+{
+  "some_root": {
+    "a": {
+      "full_name": {
+        "first_name": "John",
+        "last_name": "Doe",
+        "as": "x"
+      }
+    },
+    "b": {
+      "full_name": {
+        "first_name": "John",
+        "last_name": "Doe",
+        "as": "y"
+      }
+    },
+    "c": {
+      "full_name": {
+        "first_name": "John",
+        "last_name": "Doe"
+      }
+    }
+  }
+}

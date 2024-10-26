@@ -1,0 +1,11 @@
+some_root do
+  a do
+    full_name first_name: 'John', last_name: 'Doe', as: :x
+  end
+  b do
+    full_name first_name: 'John', last_name: 'Doe', as: :y
+  end
+  c do
+    full_name first_name: 'John', last_name: 'Doe'
+  end
+end

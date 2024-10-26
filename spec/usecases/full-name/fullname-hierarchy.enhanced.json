@@ -1,0 +1,47 @@
+{
+  "some_root": {
+    "a": {
+      "full_name": {
+        "first_name": "John",
+        "last_name": "Doe",
+        "as": "x"
+      }
+    },
+    "b": {
+      "full_name": {
+        "first_name": "John",
+        "last_name": "Doe",
+        "as": "y"
+      }
+    },
+    "c": {
+      "full_name": {
+        "first_name": "John",
+        "last_name": "Doe"
+      }
+    }
+  },
+  "process-data": {
+    "full_name-1": {
+      "name": "full_name-1",
+      "type": "full_name",
+      "data": {
+        "full_name": "John Doe"
+      }
+    },
+    "full_name-2": {
+      "name": "full_name-2",
+      "type": "full_name",
+      "data": {
+        "full_name": "John Doe"
+      }
+    },
+    "full_name-3": {
+      "name": "full_name-3",
+      "type": "full_name",
+      "data": {
+        "full_name": "John Doe"
+      }
+    }
+  }
+}

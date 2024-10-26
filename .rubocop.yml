@@ -40,6 +40,10 @@ Metrics/BlockLength:
     - shared_examples_for
     - transaction
 
+# Metrics/AbcSize:
+#   Exclude:
+#     - bin/*
+
 Metrics/MethodLength:
   Max: 25
 
@@ -55,7 +59,7 @@ Lint/UnusedMethodArgument:
 Style/BlockComments:
   Enabled: false
   Include:
-    - "**/spec/*"
+    - "**/spec/**/*"
 
 # My Preferences - Start
 Metrics/ClassLength:

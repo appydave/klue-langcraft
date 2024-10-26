@@ -30,9 +30,9 @@ RSpec.describe Klue::Langcraft::DSL::Interpreter do
     end
   end
 
-  describe '#process_args' do
+  describe '#klue_process_args' do
     it 'processes positional and named arguments' do
-      result = interpreter.send(:process_args, [1, 2, { name: 'test' }], nil)
+      result = interpreter.send(:klue_process_args, [1, 2, { name: 'test' }], nil)
       expect(result).to eq({ p1: 1, p2: 2, name: 'test' })
     end
   end
@@ -375,41 +375,6 @@ RSpec.describe Klue::Langcraft::DSL::Interpreter do
 
         it { expect(output).to eq(expected) }
       end
-    end
-  end
-
-  describe 'Processes a real .klue file and writes a .json output' do
-    # let(:klue_file) { '/Users/davidcruwys/dev/ad/klueless/docs/dsls/docs-as-code/doc-as-code-sample.klue' }
-    let(:klue_file) { '/Users/davidcruwys/dev/ad/klueless/klue-langcraft/spec/klue/langcraft/dsl/interpreter_spec.klue' }
-    let(:json_output_file) { File.join(File.dirname(__FILE__), 'interpreter_spec.json') }
-    let(:json_output_enhanced_file) { File.join(File.dirname(__FILE__), 'interpreter_spec.enhanced.json') }
-
-    it 'processes the .klue file and writes the result to a JSON file' do
-      skip 'INTERGRATION TEST ONLY'
-      # Ensure the .klue file exists
-      expect(File.exist?(klue_file)).to be true
-
-      # Interpret the .klue file and write the output to a .json file
-      interpreter.process(input_file: klue_file, output_file: json_output_file)
-
-      # Assert the output file was created
-      expect(File.exist?(json_output_file)).to be true
-
-      # Optionally, you can load and inspect the content of the JSON output
-      output_content = File.read(json_output_file)
-
-      puts "Generated JSON Output: \n#{output_content}"
-      matcher = Klue::Langcraft::DSL::ProcessMatcher.new
-      data = JSON.parse(output_content)
-      processors = matcher.match_processors(data)
-      puts "Matched Processors: #{processors}"
-
-      pipeline = Klue::Langcraft::DSL::ProcessDataPipeline.new(matcher)
-      result = pipeline.execute(data)
-
-      puts 'Processed Data:'
-      puts JSON.pretty_generate(result)
-      File.write(json_output_enhanced_file, JSON.pretty_generate(result))
     end
   end
 end

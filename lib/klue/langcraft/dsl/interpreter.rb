@@ -17,18 +17,18 @@ module Klue
         attr_accessor :processed
 
         def initialize
-          @data = {}
-          @processed = false
+          klue_reset
         end
 
         def process(input: nil, input_file: nil, output_file: nil)
-          validate_input_arguments(input, input_file)
-          input_content = input_content(input, input_file)
+          klue_reset
+          klue_validate_input_arguments(input, input_file)
+          klue_input_content = klue_input_content(input, input_file)
 
           @processed = true
-          instance_eval(input_content)
+          instance_eval(klue_input_content)
 
-          write_output(output_file) if output_file
+          klue_write_output(output_file) if output_file
           data
         end
 
@@ -36,7 +36,7 @@ module Klue
           raise "You must call 'process' before using other methods" unless @processed
 
           key = method_name
-          value = process_args(args, block)
+          value = klue_process_args(args, block)
 
           if @data[key]
             @data[key] = [@data[key]] unless @data[key].is_a?(Array)
@@ -50,7 +50,7 @@ module Klue
           @processed || super
         end
 
-        def process_args(args, block)
+        def klue_process_args(args, block)
           positional_args = []
           named_args = {}
 
@@ -82,31 +82,31 @@ module Klue
 
         private
 
-        def validate_input_arguments(input, input_file)
+        def klue_reset
+          @data = {}
+          @processed = false
+        end
+
+        def klue_validate_input_arguments(input, input_file)
           raise ArgumentError, 'Either input or input_file must be provided' unless input || input_file
           raise ArgumentError, 'Both input and input_file cannot be provided' if input && input_file
         end
 
-        def input_content(input, input_file)
+        def klue_input_content(input, input_file)
           input_file ? File.read(input_file) : input
         end
 
-        def write_output(output_file)
-          output_path = get_output_path(output_file)
+        def klue_write_output(output_file)
+          output_path = klue_output_path(output_file)
           File.write(output_path, JSON.pretty_generate(data))
         end
 
-        def get_output_path(output_file)
+        def klue_output_path(output_file)
           if Pathname.new(output_file).absolute?
             output_file
           else
             File.join(File.dirname(output_file), File.basename(output_file))
           end
-        end
-
-        # Convert to JSON
-        def to_json(*_args)
-          @data.to_json
         end
       end
     end
