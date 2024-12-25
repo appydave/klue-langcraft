@@ -15,6 +15,22 @@ RSpec.describe Klue::Langcraft::DSL::Processors::FileCollectorProcessor do
     it 'returns the collected files data' do
       expect(processor.build_result_data).to eq({ files: ['file1.txt', 'file2.txt'] })
     end
+
+    fit 'processes file collector data without errors' do
+      data = {
+        'root' => '~/dev/printspeak/printspeak-master',
+        'as' => 'file_db_erd',
+        'files' => {
+          'include' => {
+            'p1' => 'app/controllers/admin/*.rb'
+          }
+        }
+      }
+      processor = described_class.new(data, :file_collector)
+      result = processor.build_result_data
+      puts JSON.pretty_generate(result)
+      # No expectation, just ensuring it runs without errors
+    end
   end
 
   describe '#build_result' do

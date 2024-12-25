@@ -13,8 +13,8 @@ module Klue
       # methods for processing input and output, as well as converting the data
       # to hash and JSON formats.
       class Interpreter
-        attr_reader :data
-        attr_accessor :processed
+        attr_reader :klue_data
+        attr_accessor :klue_processed
 
         def initialize
           klue_reset
@@ -25,29 +25,29 @@ module Klue
           klue_validate_input_arguments(input, input_file)
           klue_input_content = klue_input_content(input, input_file)
 
-          @processed = true
+          @klue_processed = true
           instance_eval(klue_input_content)
 
           klue_write_output(output_file) if output_file
-          data
+          klue_data
         end
 
         def method_missing(method_name, *args, &block)
-          raise "You must call 'process' before using other methods" unless @processed
+          raise "You must call 'process' before using other methods" unless @klue_processed
 
           key = method_name
           value = klue_process_args(args, block)
 
-          if @data[key]
-            @data[key] = [@data[key]] unless @data[key].is_a?(Array)
-            @data[key] << value
+          if @klue_data[key]
+            @klue_data[key] = [@klue_data[key]] unless @klue_data[key].is_a?(Array)
+            @klue_data[key] << value
           else
-            @data[key] = value
+            @klue_data[key] = value
           end
         end
 
         def respond_to_missing?(method_name, include_private = false)
-          @processed || super
+          @klue_processed || super
         end
 
         def klue_process_args(args, block)
@@ -64,27 +64,27 @@ module Klue
           end
 
           # Assign positional parameters generically
-          data = positional_args.each_with_index.to_h { |arg, index| [:"p#{index + 1}", arg] }
+          klue_data = positional_args.each_with_index.to_h { |arg, index| [:"p#{index + 1}", arg] }
 
           # Merge named parameters after positional ones
-          data.merge!(named_args)
+          klue_data.merge!(named_args)
 
           # Handling a nested block
           if block
             interpreter = Interpreter.new
-            interpreter.instance_variable_set(:@processed, true) # Set @processed to true for nested interpreter
+            interpreter.instance_variable_set(:@klue_processed, true) # Set @klue_processed to true for nested interpreter
             interpreter.instance_eval(&block)
-            data.merge!(interpreter.data)
+            klue_data.merge!(interpreter.klue_data)
           end
 
-          data.empty? ? nil : data
+          klue_data.empty? ? nil : klue_data
         end
 
         private
 
         def klue_reset
-          @data = {}
-          @processed = false
+          @klue_data = {}
+          @klue_processed = false
         end
 
         def klue_validate_input_arguments(input, input_file)

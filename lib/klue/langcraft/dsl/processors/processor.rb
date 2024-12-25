@@ -14,7 +14,7 @@ module Klue
 
           # Every processor subclass must accept data and key
           def initialize(data, key)
-            @data = Marshal.load(Marshal.dump(data)) # Deep clone of the data
+            @data = clone(data)
             @key = key
           end
 
@@ -35,6 +35,34 @@ module Klue
           # This will be overridden by subclasses to define keys (or aliases)
           def self.keys
             raise NotImplementedError, 'Subclasses must define the `keys` method'
+          end
+
+          private
+
+          def clone(data)
+            deep_transform_keys(Marshal.load(Marshal.dump(data)))
+          end
+
+          def deep_transform_keys(hash)
+            hash.each_with_object({}) do |(key, value), result|
+              # Use the block if given, otherwise convert keys to symbols by default
+              transformed_key = block_given? ? yield(key) : key.to_sym
+
+              result[transformed_key] = case value
+                                        when Hash
+                                          deep_transform_keys(value) { |k| block_given? ? yield(k) : k.to_sym }
+                                        when Array
+                                          value.map do |v|
+                                            if v.is_a?(Hash)
+                                              deep_transform_keys(v) { |k| block_given? ? yield(k) : k.to_sym }
+                                            else
+                                              v
+                                            end
+                                          end
+                                        else
+                                          value
+                                        end
+            end
           end
         end
       end

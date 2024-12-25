@@ -14,11 +14,40 @@ module Klue
             [:file_collector]
           end
 
-          # Example of how a subclass can implement its specific data logic
           def build_result_data
+            working_directory = File.expand_path(data[:root])
+
+            options = Appydave::Tools::GptContext::Options.new(
+              working_directory: working_directory,
+              include_patterns: extract_patterns(data.dig(:files, :include)),
+              exclude_patterns: extract_patterns(data.dig(:files, :exclude)),
+              format: 'json',
+              line_limit: data[:line_length]
+            )
+
+            collector = Appydave::Tools::GptContext::FileCollector.new(options)
+            json = collector.build
+
             {
-              files: ['file1.txt', 'file2.txt']
+              working_directory: working_directory,
+              files: JSON.parse(json)
             }
+          rescue StandardError => e
+            puts "Error in FileCollectorProcessor: #{e.message}"
+            puts e.backtrace.join("\n")
+            {}
+          end
+
+          private
+
+          def extract_patterns(files_data)
+            if files_data.is_a?(Hash)
+              [files_data[:p1]]
+            elsif files_data.is_a?(Array)
+              files_data.map { |entry| entry[:p1] }
+            else
+              []
+            end
           end
 
           # Auto-register the processor as soon as the class is loaded

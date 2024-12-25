@@ -16,8 +16,8 @@ module Klue
 
           # Implementation of logic for building full name data
           def build_result_data
-            first_name = data['first_name'] || 'John'
-            last_name = data['last_name'] || 'Doe'
+            first_name = data[:first_name] || 'John'
+            last_name = data[:last_name] || 'Doe'
             full_name = "#{first_name} #{last_name}"
 
             {
