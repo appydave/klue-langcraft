@@ -1,12 +1,3 @@
-workflow :flex_doc,
-  notes: "Flex Doc mixes multi-shaped data into one document type, it can support setttings or key/value style structurews and tabular structures" do
-
-  
-end
-
-
-# THE DEFINITINO BELOW DRIVES THE DSL ABOVE
-
 # DSL as code is a DSL design tool, you can use it to create other DSL's
 #
 # This example is for creating an Agent as Code workflow DSL

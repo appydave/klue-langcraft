@@ -1,0 +1,165 @@
+{
+  "definition": {
+    "p1": "workflow",
+    "params": {
+      "param": [
+        {
+          "p1": "name",
+          "type": "positional"
+        },
+        {
+          "p1": "version",
+          "type": "positional",
+          "default": "v1.0"
+        },
+        {
+          "p1": "opts",
+          "type": "name_values"
+        }
+      ]
+    },
+    "node": [
+      {
+        "p1": "settings",
+        "params": {
+          "param": [
+            {
+              "p1": "key",
+              "type": "positional",
+              "default": "settings"
+            },
+            {
+              "p1": "name",
+              "type": "positional",
+              "default": null
+            }
+          ]
+        },
+        "node": {
+          "p1": "setting",
+          "repeat": true,
+          "param": [
+            {
+              "p1": "key",
+              "type": "declarative"
+            },
+            {
+              "p1": "value",
+              "type": "positional"
+            },
+            {
+              "p1": "type",
+              "type": "positional",
+              "default": "string"
+            }
+          ]
+        }
+      },
+      {
+        "p1": "prompts",
+        "node": {
+          "p1": "prompt",
+          "repeat": true,
+          "param": [
+            {
+              "p1": "key",
+              "type": "positional"
+            },
+            {
+              "p1": "content",
+              "type": "named",
+              "default": null
+            },
+            {
+              "p1": "file",
+              "type": "named",
+              "default": null
+            }
+          ]
+        }
+      },
+      {
+        "p1": "section",
+        "repeat": true,
+        "container": "sections",
+        "params": {
+          "param": [
+            {
+              "p1": "key",
+              "type": "positional"
+            },
+            {
+              "p1": "active",
+              "data_type": "boolean",
+              "default": true
+            },
+            {
+              "p1": "opts",
+              "type": "double_splat"
+            }
+          ]
+        },
+        "node": {
+          "p1": "step",
+          "repeat": true,
+          "container": "steps",
+          "params": {
+            "param": [
+              {
+                "p1": "key",
+                "type": "positional"
+              },
+              {
+                "p1": "active",
+                "data_type": "boolean",
+                "default": true
+              },
+              {
+                "p1": "opts",
+                "type": "double_splat"
+              }
+            ]
+          },
+          "node": [
+            {
+              "p1": "input",
+              "repeat": true,
+              "container": "inputs",
+              "params": {
+                "param": [
+                  {
+                    "p1": "key",
+                    "type": "positional"
+                  },
+                  {
+                    "p1": "value",
+                    "type": "positional"
+                  }
+                ]
+              }
+            },
+            {
+              "p1": "prompt",
+              "repeat": true,
+              "container": "prompts",
+              "params": {
+                "param": [
+                  {
+                    "p1": "key",
+                    "type": "positional"
+                  },
+                  {
+                    "p1": "file",
+                    "type": "named",
+                    "default": null
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "data": null
+}

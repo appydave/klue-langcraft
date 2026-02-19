@@ -1,0 +1,51 @@
+{
+  "code_explorer": {
+    "file_collector": [
+      {
+        "root": "~/dev/ad/appydave/appydave-app",
+        "as": "file_list1",
+        "files": {
+          "include": {
+            "p1": "spec/requests/api/v1/authentication_spec.rb"
+          }
+        }
+      },
+      {
+        "root": "~/dev/ad/appydave/appydave-app",
+        "as": "file_list2",
+        "files": {
+          "include": {
+            "p1": "app/controllers/api/v1/*_controller.rb"
+          },
+          "exclude": {
+            "p1": "**/authentication_controller*"
+          }
+        }
+      }
+    ]
+  },
+  "process-data": {
+    "file_collector-1": {
+      "name": "file_collector-1",
+      "type": "file_collector",
+      "data": {
+        "working_directory": "/Users/davidcruwys/dev/ad/appydave/appydave-app",
+        "files": {
+          "tree": {},
+          "content": []
+        }
+      }
+    },
+    "file_collector-2": {
+      "name": "file_collector-2",
+      "type": "file_collector",
+      "data": {
+        "working_directory": "/Users/davidcruwys/dev/ad/appydave/appydave-app",
+        "files": {
+          "tree": {},
+          "content": []
+        }
+      }
+    }
+  }
+}

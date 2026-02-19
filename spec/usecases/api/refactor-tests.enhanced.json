@@ -1,0 +1,56 @@
+{
+  "dynamic_prompt": {
+    "file_collector": {
+      "root": "~/dev/ad/appydave/appydave-app",
+      "as": "file_list",
+      "files": {
+        "include": {
+          "p1": "spec/requests/api/v1/authentication_spec.rb"
+        }
+      }
+    },
+    "context_content": {
+      "files": {
+        "include": [
+          {
+            "p1": "app/controllers/api/v1/*_controller.rb"
+          },
+          {
+            "p1": "**/models/**/*"
+          }
+        ]
+      }
+    },
+    "prompt": {
+      "p1": "create_spec",
+      "instruction": {
+        "p1": "The tests don't take into account that this service is locked down using JWT.\n\nAnd so there are some auth errors going on, can you refactor the test to work with the security.\n\n[file_list]\n\n"
+      }
+    },
+    "actions": {
+      "random_set": {
+        "p1": "file_list",
+        "count": 5,
+        "as": "random_files"
+      },
+      "create_prompts": {
+        "data": "random_files",
+        "template": "find_anti_patterns",
+        "clipboard": true
+      }
+    }
+  },
+  "process-data": {
+    "file_collector-1": {
+      "name": "file_collector-1",
+      "type": "file_collector",
+      "data": {
+        "working_directory": "/Users/davidcruwys/dev/ad/appydave/appydave-app",
+        "files": {
+          "tree": {},
+          "content": []
+        }
+      }
+    }
+  }
+}

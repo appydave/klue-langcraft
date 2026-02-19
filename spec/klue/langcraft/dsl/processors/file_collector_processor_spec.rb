@@ -16,7 +16,7 @@ RSpec.describe Klue::Langcraft::DSL::Processors::FileCollectorProcessor do
       expect(processor.build_result_data).to eq({ files: ['file1.txt', 'file2.txt'] })
     end
 
-    fit 'processes file collector data without errors' do
+    it 'processes file collector data without errors' do
       data = {
         'root' => '~/dev/printspeak/printspeak-master',
         'as' => 'file_db_erd',

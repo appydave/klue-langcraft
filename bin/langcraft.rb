@@ -3,6 +3,7 @@
 
 $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 
+puts 'xxx1'
 require 'klue/langcraft'
 require 'optparse'
 

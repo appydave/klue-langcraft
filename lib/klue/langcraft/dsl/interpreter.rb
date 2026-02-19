@@ -24,13 +24,19 @@ module Klue
           klue_reset
           klue_validate_input_arguments(input, input_file)
           klue_input_content = klue_input_content(input, input_file)
+          # klue_input_content = klue_patch_for_ruby_3_4(klue_input_content)
 
           @klue_processed = true
           instance_eval(klue_input_content)
 
+          puts "DEBUG: klue_data = #{@klue_data.inspect}"
           klue_write_output(output_file) if output_file
           klue_data
         end
+
+        # def klue_patch_for_ruby_3_4(code)
+        #   code.gsub(/^(\s*)(\w+)\s+(:\w+)/, '\1send :\2, \3')
+        # end
 
         def method_missing(method_name, *args, &block)
           raise "You must call 'process' before using other methods" unless @klue_processed
