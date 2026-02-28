@@ -47,3 +47,6 @@ Gemfile.lock
 .byebug_history
 
 1.png
+# macOS
+.DS_Store
+**/.DS_Store
